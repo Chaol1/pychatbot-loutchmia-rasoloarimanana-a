@@ -95,48 +95,45 @@ def calcul_tf(texte):
             dictMotsOccurence[mot] = 1
     return dictMotsOccurence
 
-# Calcul de TF
+# Calcul de IDF
 import math
 
-#Première fonction qui compte le nombre de documents où le mot apparaît
-def nb_doc(dic1):
-    dic2={}
-    for mot in dic1 :
-        cpt=0
-        for filename in os.listdir("./cleaned"):
-            with open(os.path.join("./cleaned", filename), "r",encoding="utf-8") as f:
-                contenu = f.read()
-            mots=contenu.split()
-            if mot in mots:
-                cpt+=1
-        dic2[mot]=cpt
-    return dic2
-
-def inverse_proportion(texte,lenCorpus):
-    dic3={}
-    for mot in texte :
-        dic3[mot]=math.log10((lenCorpus/texte[mot])+1)
-    return dic3
-
-def nbDocsPerWord(corpus):
-    listOfWords = []
+def deduplicated_list(corpus): #liste_sans_doublons
+    list_of_words = []
     for texte in corpus:
         for mot in texte:
-            listOfWords.append(mot) #tous les mots de tous les textes
-    listOfWordsDeduplicated = []
-    for mot in listOfWords:
-        if mot not in listOfWordsDeduplicated:
-            listOfWordsDeduplicated.append(mot)
-    #listOfWordsDeduplicated = list(set(listOfWords))#tous les mots dedupliqués de tous les textes
-    nbDocWordsIn = {}
-    for mot in listOfWordsDeduplicated:#pour chaque mot
-        for texte in corpus:#de chaque texte
-            if mot in texte:#si le mot est present dans ce texte, on ajoute 1
-                if mot in nbDocWordsIn:
-                    nbDocWordsIn[mot]+=1
-                else:
-                    nbDocWordsIn[mot] = 1
-    return listOfWordsDeduplicated,nbDocWordsIn
+            list_of_words.append(mot)#tous les mots de tous les textes
+    deduplicated = []
+    for mot in list_of_words:
+        if mot not in deduplicated:
+            deduplicated.append(mot)
+    return deduplicated
+
+def calculf_idf(directory):
+    dico={}
+    files_names=list_of_files(directory, "txt")
+    contenu_fichier = []
+    for fichier in files_names:
+        chemin=os.path.join("./cleaned", fichier)
+        with open(chemin, "r",encoding="utf-8") as f1:
+            contenu=f1.read() #stockage dans une variable, du contenu d'un fichier texte
+            mots=contenu.split() # split de chaque mot du texte dans une liste
+        for elt in mots: # cas par cas, pour chaque élément de la liste "mots"
+            if elt in dico and elt not in contenu_fichier: #liste permet de savoir si élément déjà rencontré dans le fichier
+                dico[elt] += 1.0
+                contenu_fichier.append(elt)
+            elif (elt not in dico): #quand l'élément n'est pas encore dans le dico
+                dico[elt] = 1.0
+                contenu_fichier.append(elt)
+        contenu_fichier = [] #réinitialisation de la liste pour chaque changement de fichier
+    return dico
+
+def calcul_idf_final():
+    dico=calculf_idf("./cleaned")
+    fichiers=list_of_files("./cleaned", "txt") #liste de fichiers
+    for (a,b) in dico.items(): # a est la clé et b, la valeur
+        dico[a]=log10(len(fichiers)/b)+1
+    return dico
 
 #Matrice TF-IDF
 
