@@ -170,7 +170,6 @@ def orderVectorDesc(matrixTfIdf,listOfWordsDeduplicated):
         wordWithVector[listOfWordsDeduplicated[j]] = sum(vector)
         j+=1
     dictDesc = dict(sorted(wordWithVector.items(),key=lambda item: item[1], reverse=True))
-
     return list(dictDesc.keys())[:10]
 
 def chiracAnalysis(corpus):
@@ -186,7 +185,7 @@ def chiracAnalysis(corpus):
         merged[key] = merged.get(key,0)+ texte2occurence[key]
     mergedDesc = dict(sorted(merged.items(),key=lambda item: item[1], reverse=True))
 
-    return mergedDesc
+    return dict(list(mergedDesc.items())[:10])
 
 def nationAnalysis(corpus):
     i=0
@@ -233,9 +232,9 @@ def ecologieAnalysis(corpus):
 
     return listPresidentsEcologie
 
-def allCommonWords(listOfWordsDeduplicated,corpus,scores):
+def allCommonWords(listOfWordsDeduplicated,corpus):
     commonWords = []
     for mot in listOfWordsDeduplicated:
-        if mot in (corpus[0] or corpus[1]) and mot in corpus[3] and mot in corpus[4] and (mot in corpus[5] or mot in corpus[6]) and mot in corpus[7]:
+        if mot in (corpus[0] or corpus[1]) and mot in corpus[2] and mot in corpus[3] and mot in corpus[4] and (mot in corpus[5] or mot in corpus[6]) and mot in corpus[7]:
             commonWords.append(mot)
     return commonWords

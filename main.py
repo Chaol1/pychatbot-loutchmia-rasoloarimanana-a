@@ -37,7 +37,7 @@ if __name__ == '__main__':
     chirac = chiracAnalysis(corpus)
     nation = nationAnalysis(corpus)
     ecologie = ecologieAnalysis(corpus)
-    commonWords = allCommonWords(listOfWordsDeduplicated,corpus,scores)
+    commonWords = allCommonWords(listOfWordsDeduplicated,corpus)
 
     while True:
         print('Menu :')
