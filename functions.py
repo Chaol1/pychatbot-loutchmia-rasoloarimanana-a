@@ -147,9 +147,9 @@ def makeScore(dicTF,dicIDF):
     return scores
 
 
-def makeMatrixTfIdf(listOfWordsDeduplicated,scores,textsNames):
+def makeMatrixTfIdf(deduplicated,scores,textsNames):
     matrixTfIDF = []
-    for mot in listOfWordsDeduplicated:
+    for mot in deduplicated:
         oneMotVector = []
         for oneDocument in textsNames:
             if mot in scores[oneDocument]:
@@ -159,20 +159,20 @@ def makeMatrixTfIdf(listOfWordsDeduplicated,scores,textsNames):
         matrixTfIDF.append(oneMotVector)
     return matrixTfIDF
 
-def orderVectorAsc(matrixTfIdf,listOfWordsDeduplicated):
+def orderVectorAsc(matrixTfIdf,deduplicated):
     wordWithVector={}
     j=0
     for vector in matrixTfIdf:
-        wordWithVector[listOfWordsDeduplicated[j]] = sum(vector)
+        wordWithVector[deduplicated[j]] = sum(vector)
         j+=1
     listAsc = dict(sorted(wordWithVector.items(),key=lambda item: item[1]))
     return list(listAsc.keys())[:10]
 
-def orderVectorDesc(matrixTfIdf,listOfWordsDeduplicated):
+def orderVectorDesc(matrixTfIdf,deduplicated):
     wordWithVector={}
     j=0
     for vector in matrixTfIdf:
-        wordWithVector[listOfWordsDeduplicated[j]] = sum(vector)
+        wordWithVector[deduplicated[j]] = sum(vector)
         j+=1
     dictDesc = dict(sorted(wordWithVector.items(),key=lambda item: item[1], reverse=True))
     return list(dictDesc.keys())[:10]
@@ -237,7 +237,7 @@ def ecologieAnalysis(corpus):
 
     return listPresidentsEcologie
 
-def allCommonWords(listOfWordsDeduplicated,corpus):
+def allCommonWords(deduplicated,corpus):
     commonWords = []
     for mot in listOfWordsDeduplicated:
         if mot in (corpus[0] or corpus[1]) and mot in corpus[2] and mot in corpus[3] and mot in corpus[4] and (mot in corpus[5] or mot in corpus[6]) and mot in corpus[7]:
