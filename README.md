@@ -4,8 +4,7 @@ Première Partie
 ### Membres du projet
 - LOUTCHMIA Laïli - Groupe A
 - RASOLOARIMANANA Malalasoa - Groupe A
-
-### Lien du dépôt principal : 
+ 
 ### Liste des programmes :
 #### Fonctions de base
 1) **list_of_files(directory, extension)**
@@ -22,7 +21,7 @@ Première Partie
 10) **score_tfidf(tf,idf)**
 
 #### Fonctionnalités à développer
-10) a
+10) **makeScore(dicTF,dicIDF)**
 11) b
 12) c
 13) d
