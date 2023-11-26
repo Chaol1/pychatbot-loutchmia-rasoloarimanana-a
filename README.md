@@ -15,18 +15,20 @@ Première Partie
 6) **convert_all_texts_2(files_names)**
 
 #### Méthode TF-IDF
-7) **calcul_tf(directory)**
-8) **nb_doc(dic1)**
-9) **calcul_idf(dic2)**
-10) **score_tfidf(tf,idf)**
+7) **deduplicated_list(corpus)**
+8) **calcul_tf(directory)**
+9) **nb_doc(dic1)**
+10) **calcul_idf(dic2)**
+11) **score_tfidf(tf,idf)**
 
 #### Fonctionnalités à développer
-10) **makeScore(dicTF,dicIDF)**
-11) b
-12) c
-13) d
-14) e
-15) f
+10) **deduplicated_list(corpus)**
+11) **makeScore(dicTF,dicIDF)**
+12) 
+13) c
+14) d
+15) e
+16) f
 
 ### Bugs rencontrés :
 - pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
