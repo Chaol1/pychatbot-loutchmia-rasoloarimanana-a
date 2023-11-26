@@ -89,7 +89,10 @@ def convert_all_texts_2(files_names):
 def calcul_tf(texte):
     dictMotsOccurence = {}
     for mot in texte:
-        dictMotsOccurence[mot] = dictMotsOccurence.get(mot,0)+1
+        if mot in dictMotsOccurence:
+            dictMotsOccurence[mot] +=1
+        else:
+            dictMotsOccurence[mot] = 1
     return dictMotsOccurence
 
 # Calcul de TF
