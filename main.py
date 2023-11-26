@@ -1,4 +1,4 @@
-from chatbot import *
+from functions import *
 
 
 # Press the green button in the gutter to run the script.
