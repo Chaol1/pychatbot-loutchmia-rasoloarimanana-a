@@ -5,7 +5,7 @@ Première Partie
 - LOUTCHMIA Laïli - Groupe A
 - RASOLOARIMANANA Malalasoa - Groupe A
  
-### Liste des programmes :
+### Liste des programmes 
 #### Fonctions de base
 1) **list_of_files(directory, extension)**
 2) **surname(files_names)**
