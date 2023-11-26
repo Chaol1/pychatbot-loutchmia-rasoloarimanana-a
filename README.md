@@ -37,3 +37,5 @@ Première Partie
 - Pour "convert_all_texts_2": Problème avec les caractères avec accents malgré une tentative de couvrir la plage de leurs codes ASCII, obligation de passer par une liste exhaustive pour chaque signe de ponctuation. La fonction de base est disponible sous forme de commentaire.
 
 ### Instruction d'exécution du code 
+
+La fonction "convert_all_texts" est à exécuter qu'une fois afin d'éviter l'erreur liée à la création du fichier "cleaned". Il faut également enlever les quotes autour des fonctions de base dans le main pour pouvoir les exécuter. Les quotes sont présentes uniquement pour le bon affichage du menu mais sont à enlever pour tester le programme.
