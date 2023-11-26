@@ -15,20 +15,20 @@ Première Partie
 6) **convert_all_texts_2(files_names)**
 
 #### Méthode TF-IDF
-7) **deduplicated_list(corpus)**
-8) **calcul_tf(directory)**
-9) **nb_doc(dic1)**
-10) **calcul_idf(dic2)**
-11) **score_tfidf(tf,idf)**
-
+7) calcul_tf(texte)
+8) deduplicated_list(corpus)
+9) calculf_idf(directory)
+10) calcul_idf_final()
+    
 #### Fonctionnalités à développer
-10) **deduplicated_list(corpus)**
-11) **makeScore(dicTF,dicIDF)**
-12) 
-13) c
-14) d
-15) e
-16) f
+10) makeScore(dicTF,dicIDF)
+11) makeMatrixTfIdf(deduplicated,scores,textsNames)
+12) orderVectorAsc(matrixTfIdf,deduplicated)
+13) orderVectorDesc(matrixTfIdf,deduplicated)
+14) chiracAnalysis(corpus)
+15) nationAnalysis(corpus)
+16) ecologieAnalysis(corpus)
+17) allCommonWords(deduplicated,corpus)
 
 ### Bugs rencontrés :
 - pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
@@ -36,4 +36,4 @@ Première Partie
 - pour Github : nous n'arrivions plus à pull et à commit
 - Pour "convert_all_texts_2": Problème avec les caractères avec accents malgré une tentative de couvrir la plage de leurs codes ASCII, obligation de passer par une liste exhaustive pour chaque signe de ponctuation. La fonction de base est disponible sous forme de commentaire.
 
-### Instruction d'exécution du code
+### Instruction d'exécution du code 
