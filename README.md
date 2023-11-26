@@ -16,9 +16,10 @@ Première Partie
 6) **convert_all_texts_2(files_names)**
 
 #### Méthode TF-IDF
-7) **nb_doc(dic1)**
-8) **inverse_proportion(dic2)**
-9) **idf(dic3)**
+7) **calcul_tf(directory)**
+8) **nb_doc(dic1)**
+9) **calcul_idf(dic2)**
+10) **score_tfidf(tf,idf)**
 
 #### Fonctionnalités à développer
 10) a
