@@ -239,7 +239,7 @@ def ecologieAnalysis(corpus):
 
 def allCommonWords(deduplicated,corpus):
     commonWords = []
-    for mot in listOfWordsDeduplicated:
+    for mot in deduplicated:
         if mot in (corpus[0] or corpus[1]) and mot in corpus[2] and mot in corpus[3] and mot in corpus[4] and (mot in corpus[5] or mot in corpus[6]) and mot in corpus[7]:
             commonWords.append(mot)
     return commonWords
