@@ -109,6 +109,7 @@ def deduplicated_list(corpus): #liste_sans_doublons
             deduplicated.append(mot)
     return deduplicated
 
+#Calcul du score idf 
 def calculf_idf(directory):
     dico={}
     files_names=list_of_files(directory, "txt")
@@ -146,7 +147,7 @@ def makeScore(dicTF,dicIDF):
             scores[textsName][mot] = iteration * dicIDF[mot]
     return scores
 
-
+#Faire la matrice
 def makeMatrixTfIdf(deduplicated,scores,textsNames):
     matrixTfIDF = []
     for mot in deduplicated:
