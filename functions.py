@@ -2,6 +2,7 @@
 
 import os
 
+#Fonction qui parcourt la liste des fichiers d’une extension donnée, dans un répertoire donné
 def list_of_files(directory, extension):
     files_names = []
     for filename in os.listdir(directory):
@@ -9,6 +10,7 @@ def list_of_files(directory, extension):
             files_names.append(filename)
     return files_names
 
+#Fonction qui permet d'avoir les fichiers du corpus sous forme de liste
 def get_texts_from_documents(directory):
     corpus = []
     for filename in os.listdir(directory):
@@ -16,7 +18,7 @@ def get_texts_from_documents(directory):
             corpus.append(file.read().split())
     return corpus
 
-# Extraire les noms des présidents à partir des noms des fichiers texte fournis
+#Extraire les noms des présidents à partir des noms des fichiers texte fournis
 def surname(files_names):
     list_of_names=[]
     chaine=""
@@ -28,7 +30,7 @@ def surname(files_names):
         list_of_names.append(chaine)
     return(list_of_names)
 
-# Associer à chaque président un prénom
+#Associer à chaque président un prénom
 def first_name(list_of_names):
     list_of_first_names=["Jacques ", "Jacques ", "Valéry ", "François ", "Emmanuel ", "François ", "François ", "Nicolas "]
     list_of_full_names=[]
@@ -37,7 +39,7 @@ def first_name(list_of_names):
     return(list_of_full_names)
 
 
-# Afficher la liste des noms des présidents sans doublons
+#Afficher la liste des noms des présidents sans doublons
 def without_dubble(list_of_full_names):
     without=[]
     for i in range(len(list_of_full_names)):
@@ -45,7 +47,7 @@ def without_dubble(list_of_full_names):
             without.append(list_of_full_names[i])
     return without
 
-# Convertir les textes des 8 fichiers en minuscules + création de cleaned
+#Convertir les textes des 8 fichiers en minuscules + création du répertoire cleaned
 def convert_all_texts(files_names):
     os.mkdir("cleaned")
     ligne2=""
@@ -62,7 +64,7 @@ def convert_all_texts(files_names):
                         ligne2+=ligne[i]
                 f2.write(ligne2)
 
-# Supprimer tout caractère de ponctuation dans les fichiers de cleaned
+#Supprimer tous les caractères de ponctuation dans les fichiers de cleaned
 def convert_all_texts_2(files_names):
     ligne1=""
     for fichier in files_names:
@@ -83,15 +85,17 @@ def convert_all_texts_2(files_names):
         f.close()
 
 
-# Méthode TF
+# Calcul de TF pour chaque mot dans chaque document
 def calcul_tf(texte):
     dictMotsOccurence = {}
     for mot in texte:
         dictMotsOccurence[mot] = dictMotsOccurence.get(mot,0)+1
     return dictMotsOccurence
 
-# Méthode IDF
+# Calcul de TF
 import math
+
+#Première fonction qui compte le nombre de documents où le mot apparaît
 def nb_doc(dic1):
     dic2={}
     for mot in dic1 :
@@ -115,7 +119,7 @@ def nbDocsPerWord(corpus):
     listOfWords = []
     for texte in corpus:
         for mot in texte:
-            listOfWords.append(mot)#tous les mots de tous les textes
+            listOfWords.append(mot) #tous les mots de tous les textes
     listOfWordsDeduplicated = []
     for mot in listOfWords:
         if mot not in listOfWordsDeduplicated:
