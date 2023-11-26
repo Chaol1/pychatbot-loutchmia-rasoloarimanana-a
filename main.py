@@ -26,18 +26,18 @@ if __name__ == '__main__':
         dicTF[textsNames[i]]  = calcul_tf(texte) #TF
         i+=1
 
-    listOfWordsDeduplicated, wordsPerDoc = nbDocsPerWord(corpus)
-    dicIDF = inverse_proportion(wordsPerDoc,len(corpus))
+    deduplicated=deduplicated_list(corpus)
+    dicIDF = calcul_idf_final()
 
     scores = makeScore(dicTF,dicIDF)
-    matrixTfIdf = makeMatrixTfIdf(listOfWordsDeduplicated,scores,textsNames)
+    matrixTfIdf = makeMatrixTfIdf(deduplicated,scores,textsNames)
 
-    leastTfIdfWords = orderVectorAsc(matrixTfIdf,listOfWordsDeduplicated)
-    mostTfIdfWords = orderVectorDesc(matrixTfIdf,listOfWordsDeduplicated)
+    leastTfIdfWords = orderVectorAsc(matrixTfIdf,deduplicated)
+    mostTfIdfWords = orderVectorDesc(matrixTfIdf,deduplicated)
     chirac = chiracAnalysis(corpus)
     nation = nationAnalysis(corpus)
     ecologie = ecologieAnalysis(corpus)
-    commonWords = allCommonWords(listOfWordsDeduplicated,corpus)
+    commonWords = allCommonWords(deduplicated,corpus)
 
     while True:
         print('Menu :')
