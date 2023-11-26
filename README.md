@@ -29,7 +29,9 @@ Première Partie
 14) e
 15) f
 
-### Quelques 
-### Bugs rencontrés :
+### Quelques bugs rencontrés :
 - pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
+- pour *calcul_tf(directory)* : retourne un dictionnaire qui a pour clés tous les mots et pour valeurs, le nombre de fois où le mot apparaît dans l'ensemble du corpus et non dans chaque document
 - 
+
+### Instruction d'éxécution du code
