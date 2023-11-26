@@ -33,7 +33,7 @@ Première Partie
 ### Bugs rencontrés :
 - pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
 - pour *calcul_tf(directory)* : retourne un dictionnaire qui a pour clés tous les mots et pour valeurs, le nombre de fois où le mot apparaît dans l'ensemble du corpus et non dans chaque document
-- pour Github : nous n'arrivions plus à pull et à commit
+- pour Github : à certains moments, nous n'arrivions plus à pull, push ou commit
 - Pour "convert_all_texts_2": Problème avec les caractères avec accents malgré une tentative de couvrir la plage de leurs codes ASCII, obligation de passer par une liste exhaustive pour chaque signe de ponctuation. La fonction de base est disponible sous forme de commentaire.
 
 ### Instruction d'exécution du code 
