@@ -1,6 +1,6 @@
-#Pychatbot
-Projet Python L1
+# Projet Python L1 : My first Chatbot
+Première Partie
 
-#Contributeurs
-Loutchmia Laïli - Groupe A
-Rasoloarimanana Malalasoa - Groupe A
+# Contributeurs
+- LOUTCHMIA Laïli - Groupe A
+- RASOLOARIMANANA Malalasoa - Groupe A
