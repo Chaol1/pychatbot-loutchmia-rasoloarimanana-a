@@ -132,7 +132,7 @@ def calcul_idf_final():
     dico=calculf_idf("./cleaned")
     fichiers=list_of_files("./cleaned", "txt") #liste de fichiers
     for (a,b) in dico.items(): # a est la clé et b, la valeur
-        dico[a]=log10(len(fichiers)/b)+1
+        dico[a]=math.log10(len(fichiers)/b)+1
     return dico
 
 #Matrice TF-IDF
