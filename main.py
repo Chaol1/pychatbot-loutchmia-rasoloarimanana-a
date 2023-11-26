@@ -23,7 +23,7 @@ if __name__ == '__main__':
     dicTF = {}
     i = 0
     for texte in corpus:
-        dicTF[textsNames[i]]  = calcul_tf(texte)#TF
+        dicTF[textsNames[i]]  = calcul_tf(texte) #TF
         i+=1
 
     listOfWordsDeduplicated, wordsPerDoc = nbDocsPerWord(corpus)

@@ -1,6 +1,7 @@
 # PARTIE 1
 
 import os
+
 def list_of_files(directory, extension):
     files_names = []
     for filename in os.listdir(directory):
