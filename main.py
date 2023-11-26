@@ -59,7 +59,7 @@ if __name__ == '__main__':
             print('Le(s) mot(s) le(s) plus répété(s) par M.Chirac sont :',chirac)
             time.sleep(2)
         elif choice == '4':
-            print('Le président qui repète le plus le mot "Nation" est :',nation)
+            print('Les présidents ayant le plus répété le mot "Nation" sont :',nation)
             time.sleep(2)
         elif choice == '5':
             print('Le premier président à parler du climat ou de l écologie est :',ecologie)
