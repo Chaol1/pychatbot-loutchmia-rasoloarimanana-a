@@ -1,5 +1,4 @@
 from functions import *
-import time
 if __name__ == '__main__':
     '''
     directory = "./speeches"
