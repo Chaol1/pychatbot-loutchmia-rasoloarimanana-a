@@ -1,7 +1,6 @@
 from functions import *
 import time
 if __name__ == '__main__':
-    '''
     directory = "./speeches"
     files_names = list_of_files(directory, "txt")
     list_of_names=surname(files_names)
@@ -10,60 +9,5 @@ if __name__ == '__main__':
     print(list_of_full_names)
     without=without_dubble(list_of_full_names)
     print(without)
-    #convert_all_texts(files_names) (à ne plus exécuter)"""
-    #convert_all_texts_2(files_names)
-    directory = "./cleaned"
-    '''
-    directory = "./cleaned"
-
-    #corriger pour avoir tous les docs
-    corpus= get_texts_from_documents(directory)#tous les textes
-    textsNames = list_of_files(directory,'txt')#tous les noms
-
-    dicTF = {}
-    i = 0
-    for texte in corpus:
-        dicTF[textsNames[i]]  = calcul_tf(texte) #TF
-        i+=1
-
-    deduplicated=deduplicated_list(corpus)
-    dicIDF = calcul_idf_final()
-
-    scores = makeScore(dicTF,dicIDF)
-    matrixTfIdf = makeMatrixTfIdf(deduplicated,scores,textsNames)
-
-    leastTfIdfWords = orderVectorAsc(matrixTfIdf,deduplicated)
-    mostTfIdfWords = orderVectorDesc(matrixTfIdf,deduplicated)
-    chirac = chiracAnalysis(corpus)
-    nation = nationAnalysis(corpus)
-    ecologie = ecologieAnalysis(corpus)
-    commonWords = allCommonWords(deduplicated,corpus)
-
-    while True:
-        print('Menu :')
-        print('1. Les mots les moins importants dans le corpus')
-        print('2. Les mots les plus importants')
-        print('3. Les mots les plus répétés par M.Chirac ')
-        print('4. Le président qui repète le plus le mot "Nation" ')
-        print('5. Le premier président à parler du climat ou de l écologie ')
-        print('6. Les mots communs à tous les discours')
-
-        choice = input('Entrez le numéro de votre choix : ')
-        if choice == '1':
-            print('Les mots les moins importants sont :',leastTfIdfWords)
-            time.sleep(2)
-        elif choice == '2':
-            print('Les mots les plus importants sont :',mostTfIdfWords)
-            time.sleep(2)
-        elif choice == '3':
-            print('Le(s) mot(s) le(s) plus répété(s) par M.Chirac sont :',chirac)
-            time.sleep(2)
-        elif choice == '4':
-            print('Les présidents ayant le plus répété le mot "Nation" sont :',nation)
-            time.sleep(2)
-        elif choice == '5':
-            print('Le premier président à parler du climat ou de l écologie est :',ecologie)
-            time.sleep(2)
-        elif choice == '6':
-            print('Les mots communs à tous les discours sont :',commonWords)
-            time.sleep(2)
+    convert_all_texts(files_names)
+    convert_all_texts_2(files_names)
