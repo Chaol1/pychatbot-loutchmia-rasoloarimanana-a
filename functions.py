@@ -1,5 +1,5 @@
 # Liste des mots les moins importants
-def not_important(matrice, mots_uniques):
+def less_important(matrice, mots_uniques):
     mots = []
     #j parcourt les mots uniques
     j = 0
