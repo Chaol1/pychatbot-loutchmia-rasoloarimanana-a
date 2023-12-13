@@ -1,35 +1,61 @@
-import math
+#Calcul du score TF-IDF
 
-#Calcule le nombre d’occurrence de chaque mot dans une chaîne de caractère
+def tf_idf(dicTF,dicIDF):
+    scores = {}
+    #Parcourir le dictionnaire TF
+    for file,dicOcc in dicTF.items():
+        #Initialiser un  dictionnaire vide comme valeur
+        scores[file] = {}
+        #Parcourir le dictionnaire valeur du dicTF
+        for mot,tf in dicOcc.items():
+            #Calcul du score TF-IDF pour chaque mot
+            scores[file][mot] = tf * dicIDF[mot]
+    return scores
 
-def tf_chaine(texte):
-    #Initialiser un dictionnaire
-    dicOccurrence={}
-    #Diviser la chaine en mots individuels
-    mots=texte.split()
-    #Parcourir chaque mot de la liste mots
-    for mot in mots:
-        #Si le mot n'est pas déjà dans le dictionnaire
-        if mot not in dicOccurrence :
-            #Initialiser à 1 l'occurence du mot
-            dicOccurrence[mot]=1
-        else:
-            #Sinon incrémenter l'occurence de 1
-            dicOccurrence[mot]+=1
-    return dicOccurrence
+# Liste des mots dédupliqués
 
-#Calcul des scores TF pour chaque mot dans chaque fichier
+def mots_uniques(corpus):
+    list_of_words = []
+    files_names = list_of_files(corpus, "txt")
+    #Parcourir chaque fichier de la liste
+    for fichier in files_names:
+        chemin = os.path.join("./cleaned", fichier)
+        with open(chemin, "r", encoding="utf-8") as f1:
+            contenu = f1.read()
+            mots = contenu.split()
+        #Pour chaque mot
+        for mot in mots:
+            #Ajouter tous les mots de tous les fichiers
+            list_of_words.append(mot)
+    #Initialiser une liste vide
+    unique = []
+    #Pour chaque mot de la liste de tous les mots
+    for mot in list_of_words:
+        #Si le mot n'est pas dans la liste de mots unique
+        if mot not in unique:
+            #Ajouter le mot
+            unique.append(mot)
+    return unique
 
-def calcul_tf(corpus):
-    scores_tf = {}
-    #Parcourir chaque fichier du répertoire
-    for filename in os.listdir(corpus):
-        #Ouvrir le fichier spécifié par le chemin complet en mode lecture
-        with open(os.path.join(corpus, filename), "r",encoding="utf-8") as f:
-            contenu = f.read()
-            #Utiliser la fonction précédente pour chaque fichier
-            dicOccurrence= tf_chaine(contenu)
-            #les clés du dictionnaire sont les noms du fichier
-            #les valeurs sont les dictionnaires avec chaque mot et son score TF
-            scores_tf[filename] = dicOccurrence
-    return scores_tf
+#Création de la matrice TF-IDF
+
+def matrice_TfIdf(corpus,mots_uniques,scores,files_names):
+    M = []
+    #Utiliser la fonction précédente pour avoir les mots uniques
+    liste_mots=mots_uniques(corpus)
+    #Pour chaque mot de la liste
+    for mot in liste_mots:
+        #Initialiser une liste vecteur numérique
+        vecteur_num= []
+        #Parcourir chaque fichier
+        for fichier in files_names:
+            #Si le mot est dans le dic des scores TF-IDF
+            if mot in scores[fichier]:
+                #Ajouter à son vecteur de scores le vecteur numérique
+                vecteur_num.append(scores[fichier][mot])
+            else:
+                #Sinon ajouter un score de 0
+                vecteur_num.append(0.0)
+        #Ajouter à la matrice le vecteur de scores pour chaque mot
+        M.append(vecteur_num)
+    return M
