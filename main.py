@@ -1,5 +1,4 @@
 from functions import *
-import time
 if __name__ == '__main__':
     '''
     directory = "./speeches"
@@ -13,6 +12,5 @@ if __name__ == '__main__':
     #convert_all_texts(files_names) (à ne plus exécuter)"""
     #convert_all_texts_2(files_names)'''
     
-    directory = "./cleaned"
-    idf=calcul_idf_final()
-    print(idf)
+    score_max=score_eleve(dic_TF_IDF)
+    print(score_max)
