@@ -1,35 +1,20 @@
-import math
+def mots_Chirac(matrice, mots_uniques):
+    non_liste=less_important(matrice, mots_uniques)
+    mots = []
+    plus_rep=0
+    with open("cleaned/Nomination_Chirac1.txt", "r", encoding="utf-8") as f1, open("cleaned/Nomination_Chirac2.txt","r", encoding="utf-8") as f2:
+        texte1 = f1.read()
+        texte2 = f2.read()
+    tf1 = tf_chaine(texte1)
+    tf2 = tf_chaine(texte2)
+    for mot,tf in tf1.items() :
+        if tf1[mot]>plus_rep and tf1[mot] not in non_liste:
+            plus_rep=tf1[mot]
+            mots.append(mot)
+    for mot, tf in tf2.items():
+        if tf2[mot] > plus_rep and tf2[mot] not in non_liste:
+            plus_rep = tf2[mot]
+            mots.append(mot)
+    return mots
 
-#Calcule le nombre d’occurrence de chaque mot dans une chaîne de caractère
-
-def tf_chaine(texte):
-    #Initialiser un dictionnaire
-    dicOccurrence={}
-    #Diviser la chaine en mots individuels
-    mots=texte.split()
-    #Parcourir chaque mot de la liste mots
-    for mot in mots:
-        #Si le mot n'est pas déjà dans le dictionnaire
-        if mot not in dicOccurrence :
-            #Initialiser à 1 l'occurence du mot
-            dicOccurrence[mot]=1
-        else:
-            #Sinon incrémenter l'occurence de 1
-            dicOccurrence[mot]+=1
-    return dicOccurrence
-
-#Calcul des scores TF pour chaque mot dans chaque fichier
-
-def calcul_tf(corpus):
-    scores_tf = {}
-    #Parcourir chaque fichier du répertoire
-    for filename in os.listdir(corpus):
-        #Ouvrir le fichier spécifié par le chemin complet en mode lecture
-        with open(os.path.join(corpus, filename), "r",encoding="utf-8") as f:
-            contenu = f.read()
-            #Utiliser la fonction précédente pour chaque fichier
-            dicOccurrence= tf_chaine(contenu)
-            #les clés du dictionnaire sont les noms du fichier
-            #les valeurs sont les dictionnaires avec chaque mot et son score TF
-            scores_tf[filename] = dicOccurrence
-    return scores_tf
+  
