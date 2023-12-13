@@ -13,7 +13,13 @@ if __name__ == '__main__':
     #convert_all_texts(files_names) (à ne plus exécuter)"""
     #convert_all_texts_2(files_names)
     '''
-    corpus = "./cleaned"
+    dicTF=tf
+    dicIDF=idf
+    score_tf_idf=tf_idf(dicTF,dicIDF)
+    print(score_tf_idf)
 
-    tf=calcul_tf(corpus)
-    print(tf)
+    unique=mots_uniques(corpus)
+    scores=score_tf_idf
+    files_names=list_of_files(corpus, "txt")
+    TF_IDF=matrice_TfIdf(corpus,mots_uniques,scores,files_names)
+    print(TF_IDF)
