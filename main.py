@@ -17,3 +17,6 @@ if __name__ == '__main__':
 
     tf=calcul_tf(corpus)
     print(tf)
+
+    chirac=mots_Chirac(TF_IDF, unique)
+    print(chirac)
