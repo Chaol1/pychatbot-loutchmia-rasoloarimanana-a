@@ -18,5 +18,16 @@ if __name__ == '__main__':
     tf=calcul_tf(corpus)
     print(tf)
 
+    dicTF=tf
+    dicIDF=idf
+    score_tf_idf=tf_idf(dicTF,dicIDF)
+    print(score_tf_idf)
+
+    unique=mots_uniques(corpus)
+    scores=score_tf_idf
+    files_names=list_of_files(corpus, "txt")
+    TF_IDF=matrice_TfIdf(corpus,mots_uniques,scores,files_names)
+    print(TF_IDF)
+    
     chirac=mots_Chirac(TF_IDF, unique)
     print(chirac)
