@@ -1,6 +1,10 @@
 # Projet Python L1 : My first Chatbot
 Première Partie
 
+### Lien du dépôt GIT
+
+https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
+
 ### Membres du projet
 - LOUTCHMIA Laïli - Groupe A
 - RASOLOARIMANANA Malalasoa - Groupe A
@@ -41,7 +45,3 @@ Première Partie
 ### Instruction d'exécution du code 
 
 La fonction "convert_all_texts" est à exécuter qu'une fois afin d'éviter l'erreur liée à la création du fichier "cleaned". Il faut également enlever les quotes autour des fonctions de base dans le main pour pouvoir les exécuter. Les quotes sont présentes uniquement pour le bon affichage du menu mais sont à enlever pour tester le programme.
-
-### Lien du dépôt GIT
-
-https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
