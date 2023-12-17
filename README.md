@@ -15,20 +15,22 @@ Première Partie
 6) **convert_all_texts_2(files_names)**
 
 #### Méthode TF-IDF
-7) calcul_tf(texte)
-8) deduplicated_list(corpus)
-9) calculf_idf(directory)
-10) calcul_idf_final()
-    
+
+7) **tf_chaine(texte)**
+8) **calcul_tf(corpus)**
+9) **nbDocparMot(directory)**
+10) **calcul_idf_final()**
+11) **tf_idf(dic_TF,dic_IDF)**
+12) **mots_uniques(corpus)**
+13) **matrice_TfIdf(corpus,dic_scores,files_names)**
+14) **matriceAvecMots(corpus, dic_scores, files_names)**
+
 #### Fonctionnalités à développer
-10) makeScore(dicTF,dicIDF)
-11) makeMatrixTfIdf(deduplicated,scores,textsNames)
-12) orderVectorAsc(matrixTfIdf,deduplicated)
-13) orderVectorDesc(matrixTfIdf,deduplicated)
-14) chiracAnalysis(corpus)
-15) nationAnalysis(corpus)
-16) ecologieAnalysis(corpus)
-17) allCommonWords(deduplicated,corpus)
+15) less_important(TF_IDF,unique)
+16) score_eleve(TF_IDF,unique)
+17) mots_Chirac(TF_IDF, unique)
+18) nation_analyse(dic_mat,liste_of_names)
+19) climat_analyse(dic_mat,list_of_names)
 
 ### Bugs rencontrés :
 - pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
