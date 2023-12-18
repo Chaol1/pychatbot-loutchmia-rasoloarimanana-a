@@ -20,18 +20,18 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 
 #### Méthode TF-IDF
 
-7) **tf_chaine(texte)**
+7) **tf_chain(texte)**
 8) **calcul_tf(corpus)**
-9) **nbDocparMot(directory)**
+9) **nbDocperWord(directory)**
 10) **calcul_idf_final()**
 11) **tf_idf(dic_TF,dic_IDF)**
-12) **mots_uniques(corpus)**
-13) **matrice_TfIdf(corpus,dic_scores,files_names)**
-14) **matriceAvecMots(corpus, dic_scores, files_names)**
+12) **unique_words(corpus)**
+13) **matrix_TfIdf(corpus,dic_scores,files_names)**
+14) **matrixAvecMots(corpus, dic_scores, files_names)**
 
 #### Fonctionnalités à développer
 15) less_important(TF_IDF,unique)
-16) score_eleve(TF_IDF,unique)
+16) high_score(TF_IDF,unique)
 17) words_Chirac(TF_IDF, unique)
 18) nation_analyse(dic_mat,liste_of_names)
 19) climate_names(dic_mat,list_of_names)
