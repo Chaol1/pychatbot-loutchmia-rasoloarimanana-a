@@ -3,7 +3,7 @@ Création du dictionnaire des scores TF-IDF et de la matrice TF-IDF"""
 
 #Calcul du score TF-IDF
 #Paramètres(dicTF: dictionnaire contenant les scores TF de chaque mot, dicIDF: dictionnaire contenant les scores IDF de chaque mot)
-#Résultat(scores: dictionnaires contenant les scores TF-IDF de chaque mot)
+#Résultat(scores: dictionnaire contenant les scores TF-IDF de chaque mot)
 
 def tf_idf(dicTF,dicIDF):
     scores = {}
@@ -16,7 +16,10 @@ def tf_idf(dicTF,dicIDF):
             scores[file][word] = tf * dicIDF[word]
     return scores
 
+
 # Liste des mots dédupliqués
+#Paramètre(corpus: chemin du dossier "cleaned")
+#Résultat(unique: Liste des mots de chaque document sans doublon)
 
 def unique_words(corpus):
     list_of_words = []
@@ -40,8 +43,11 @@ def unique_words(corpus):
             #Ajouter le mot
             unique.append(word)
     return unique
+    
 
 #Création de la matrice TF-IDF
+#Paramètres(corpus: chemin du répertoire "cleaned", scores: dictionnaire contenant les scores TF-IDF de chaque mot, files_names: Liste des noms des fichiers texte dans "cleaned")
+#Résultat(M:Matrice TF-IDF)
 
 def matrix_TfIdf(corpus,scores,files_names):
     M = []
