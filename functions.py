@@ -14,12 +14,12 @@ def nation_analyse(dic_mat,list_of_names):
             #Parcourir les valeurs du vecteur du mot nation
             for i in range (len(vecteur)):
                 #Parcourir la liste des mots moins importants
-                for j in range (len(liste_of_names)):
+                for j in range (len(list_of_names)):
                     #Si la valeur est différente de 0 et le mot n'est pas dans la liste
-                    if vecteur[i]!=0.0 and i==j and liste_of_names[j] not in noms :
-                        noms += liste_of_names[j] + " "
+                    if vecteur[i]!=0.0 and i==j and list_of_names[j] not in noms :
+                        noms += list_of_names[j] + " "
                         #Chercher le max
                         if vecteur[i]>plus_rep:
                             plus_rep=vecteur[i]
-                            plus=liste_of_names[j]
+                            plus=list_of_names[j]
     return noms,plus
