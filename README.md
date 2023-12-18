@@ -38,7 +38,7 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 
 #### Vectorisation de question
 20) token(question)
-21)
+21) common_words (corpus, question)
 22) tf_chain_bis(text)
 23) calcul_tf_bis(corpus)
 24) quest_final(question, corpus)
@@ -52,13 +52,16 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 
 #### Génération de réponse automatique
 32) doc_plus_pert(question, corpus)
-33) def answer_chatbot(question,sentence)
+33) maxi_tfidf(vect_quest)
+34) sentence_word(corpus, document, maxi_word)
+35) answer_chatbot(question,sentence)
 
 ### Bugs rencontrés :
-- pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
-- pour *calcul_tf(directory)* : retourne un dictionnaire qui a pour clés tous les mots et pour valeurs, le nombre de fois où le mot apparaît dans l'ensemble du corpus et non dans chaque document
-- pour Github : à certains moments, nous n'arrivions plus à pull, push ou commit
+- Pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
+- Pour *calcul_tf(directory)* : retourne un dictionnaire qui a pour clés tous les mots et pour valeurs, le nombre de fois où le mot apparaît dans l'ensemble du corpus et non dans chaque document
+- Pour Github : à certains moments, nous n'arrivions plus à pull, push ou commit
 - Pour "convert_all_texts_2": Problème avec les caractères avec accents malgré une tentative de couvrir la plage de leurs codes ASCII, obligation de passer par une liste exhaustive pour chaque signe de ponctuation. La fonction de base est disponible sous forme de commentaire.
+- Pour "answer_chatbot" : Problème pour certaines questions données par l'utilisateur, une concaténation impossible entre "str" et "None" si la phrase est trop longue ou si elle contient des mots récurrents, il faut donc essayer avec des questions comme "Peux-tu me dire comment une nation peut-elle prendre soin du climat ?" ou "Comment une nation peut-elle prendre soin du climat ?" pouir que cela fonctionne.
 
 ### Instruction d'exécution du code 
 
@@ -68,3 +71,6 @@ La fonction "convert_all_texts" est à exécuter qu'une fois afin d'éviter l'er
 Notre menu propose 2 options : 
 La première où l'utilisateur choisit un chiffre entre 1 et 5 pour lui afficher les réponses aux 5 fonctionnalités à développer.
 La deuxième qui lui permet de poser une question libre.
+Lorsqu'on demande "Votre choix : ", soit vous mettez un chiffre, soit vous écrivez votre question commençant par une **majuscule** et par ces mots : *"Comment","Pourquoi","Peux-tu","Quel","Quels" ou "Quand"*. 
+
+Vous aurez ainsi une réponse complète basée sur les documents.
