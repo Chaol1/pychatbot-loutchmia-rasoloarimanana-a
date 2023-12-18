@@ -43,7 +43,7 @@ def unique_words(corpus):
 
 #Création de la matrice TF-IDF
 
-def matrix_TfIdf(corpus,mots_uniques,scores,files_names):
+def matrix_TfIdf(corpus,scores,files_names):
     M = []
     #Utiliser la fonction précédente pour avoir les mots uniques
     list_of_words=unique_words(corpus)
