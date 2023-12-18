@@ -5,6 +5,9 @@ Fonctions de base de traitement des fichiers texte: récupération des noms des 
 import os
 
 #Fonction qui parcourt la liste des fichiers d’une extension donnée, dans un répertoire donné
+#Paramètres(directory: Chemin du répertoire "speeches", extension: extension des fichiers issus de "speeches", ici "txt")
+#Résultat(files_names: Liste des noms des fichiers textes contenus dans le répertoire "speeches")
+
 def list_of_files(directory, extension):
     files_names = []
     for filename in os.listdir(directory):
@@ -12,7 +15,10 @@ def list_of_files(directory, extension):
             files_names.append(filename)
     return files_names
 
+
 #Extraire les noms des présidents à partir des noms des fichiers texte fournis
+#Paramètre(files_names: Liste des noms des fichiers texte de "speeches")
+#Résultat(list_of_names: Liste des noms de famille des présidents)
 
 def surname(files_names):
     list_of_names=[]
@@ -30,8 +36,11 @@ def surname(files_names):
         #Ajouter le nom à la liste des noms
         list_of_names.append(chain)
     return(list_of_names)
+    
 
-#Associer à chaque président un prénom
+#Associer à chaque président son prénom
+#Paramètre(list_of_names: Liste des noms de famille des présidents)
+#Résultat(list_of_full_names: Liste des noms et prénoms présidentiels)
 
 def first_name(list_of_names):
     #Initialiser en dur la liste des prénoms
@@ -42,7 +51,10 @@ def first_name(list_of_names):
         list_of_full_names.append(list_of_first_names[i]+list_of_names[i])
     return(list_of_full_names)
 
+
 #Afficher la liste des noms des présidents sans doublons
+#Paramètre(list_of_full_names:Liste des noms complets des présidents)
+#Résultat(without: Liste des noms et prénoms présidentiels sans doublons)
 
 def without_dubble(list_of_full_names):
     without=[]
@@ -53,7 +65,10 @@ def without_dubble(list_of_full_names):
             without.append(list_of_full_names[i])
     return without
 
+
 #Convertir les textes des 8 fichiers en minuscules + création du répertoire cleaned
+#Paramètre(files_names: Liste des fichiers texte de "speeches")
+#Résultat(Pas de résultat retourné mais les fichiers texte ont été copiés dans le répertoire "cleaned" et y ont été modifiés)
 
 def convert_all_texts(files_names):
     #Créer le répertoire "cleaned"
@@ -82,6 +97,9 @@ def convert_all_texts(files_names):
 
 
 #Supprimer tous les caractères de ponctuation dans les fichiers de cleaned
+#Paramètre(files_names: Liste des noms des fichiers texte partagés de "speeches" et "cleaned")
+#Résultat(Pas de résultat retourné mais les fichiers de "cleaned" ont été modifiés.)
+
 def convert_all_texts_2(files_names):
     line1=""
     #Parcourir chaque fichier
