@@ -1,4 +1,6 @@
-# PARTIE 1
+"""My first chatbot - LOUTCHMIA Laïli & RASOLOARIMANANA Malalasoa
+Fonctions de base de traitement des fichiers texte: récupération des noms des présidents & conversion de textes"""
+
 
 import os
 
@@ -15,19 +17,18 @@ def list_of_files(directory, extension):
 def surname(files_names):
     list_of_names=[]
     #Initialiser une chaîne vide
-    chaine=""
+    chain=""
     #Parcourir la liste des noms de fichier
     for i in range(len(files_names)):
         #Réinitialiser la chaine pour stocker le nom à chaque début de la boucle
-        chaine = ""
+        chain = ""
         for j in range(len(files_names[i])):
             #A partir de la 1ère lettre du nom (j>=11)
-            #Sans l'extension (.txt) et sans les chiffres 1 et 2
             if j>=11 and j<len(files_names[i])-4 and files_names[i][j]!="1" and files_names[i][j]!="2":
                 #Ajouter le caractère à la chaine
-                chaine+=(files_names[i][j])
+                chain+=(files_names[i][j])
         #Ajouter le nom à la liste des noms
-        list_of_names.append(chaine)
+        list_of_names.append(chain)
     return(list_of_names)
 
 #Associer à chaque président un prénom
@@ -57,56 +58,53 @@ def without_dubble(list_of_full_names):
 def convert_all_texts(files_names):
     #Créer le répertoire "cleaned"
     os.mkdir("cleaned")
-    ligne2=""
+    line2=""
     #Parcourir les fichiers un à un
-    for fichier in files_names:
+    for file in files_names:
         #Créer un chemin vers chaque fichier avec son répertoire
-        chemin = os.path.join("./speeches", fichier)
-        chemin2 = os.path.join("./cleaned", fichier)
+        path1 = os.path.join("./speeches", file)
+        path2 = os.path.join("./cleaned", file)
         #Ouvrir les deux fichiers en même temps
-        with open(chemin, "r") as f1, open(chemin2, "w") as f2:
+        with open(path1, "r") as f1, open(path2, "w") as f2:
             #Pour chaque ligne du fichier ouvert de f1
-            for ligne in f1:
-                ligne2=""
+            for line in f1:
+                line2=""
                 #Pour chaque caractère de la ligne
-                for i in range(len(ligne)):
+                for i in range(len(line)):
                     #Si le code ASCII du caractère est dans l’intervalle des majuscules
-                    if (ord(ligne[i]))>=65 and (ord(ligne[i]))<=90:
-                        #Ajouter à la chaîne le caractère convertit en minuscule
-                        ligne2+=chr(ord(ligne[i]) + 32)
+                    if (ord(line[i]))>=65 and (ord(line[i]))<=90:
+                        #Ajouter à la chaîne le caractère converti en minuscule
+                        line2+=chr(ord(line[i]) + 32)
                     else:
                         #Ajouter le caractère si ce n’est pas une majuscule
-                        ligne2+=ligne[i]
-                f2.write(ligne2)
+                        line2+=line[i]
+                f2.write(line2)
 
 
 #Supprimer tous les caractères de ponctuation dans les fichiers de cleaned
 def convert_all_texts_2(files_names):
-    ligne1=""
+    line1=""
     #Parcourir chaque fichier
-    for fichier in files_names:
+    for file in files_names:
         txt = ""
         #Créer un chemin en joignant le répertoire cleaned avec le fichier
-        chemin=os.path.join("./cleaned", fichier)
-        with open(chemin, 'r') as f1:
-            #Lire toutes les lignes du fichier
-            contenu=f1.readlines()
+        path1=os.path.join("./cleaned", file)
+        with open(path1, 'r') as f1:
+            content=f1.readlines()
             #Parcourir chaque ligne du contenu du fichier
-            for ligne in contenu:
+            for line in content:
                 #Parcourir chaque caractère de chaque ligne
-                for i in range(len(ligne)):
-                    #Si le caractère correspond à une apostrophe ou un tiret
-                    #Ajouter un espace à la chaîne de caractères
-                    if (ligne[i]=="'" or ligne[i]=="-"):
-                        ligne1+=" "
+                for i in range(len(line)):
+                    #Ajouter un espace à la chaîne de caractères si apostrophe ou tiret
+                    if (line[i]=="'" or line[i]=="-"):
+                        line1+=" "
                     #Si le caractère n’est pas un caractère de ponctuation
-                    elif ligne[i]!="," and ligne[i]!="." and ligne[i]!=";" and ligne[i]!="?" and ligne[i]!="!" and ligne[i]!=";" and ligne[i]!='"'and ligne[i]!=':':
-                        ligne1+=ligne[i]
-                txt+=ligne1
-                #Réinitialiser la chaîne ligne à un chaîne vide
-                ligne1=""
-        #Ouvrir le fichier en mode écriture
-        f=open(chemin, 'w')
+                    elif line[i]!="," and line[i]!="." and line[i]!=";" and line[i]!="?" and line[i]!="!" and line[i]!=";" and line[i]!='"'and line[i]!=':':
+                        line1+=line[i]
+                txt+=line1
+                #Réinitialiser la chaîne ligne à une chaîne vide
+                line1=""
+        f=open(path1, 'w')
         #Ecrire le contenu modifié dans le fichier
         f.write(txt)
         f.close()
