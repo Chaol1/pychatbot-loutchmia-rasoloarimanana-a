@@ -69,3 +69,30 @@ def matrix_TfIdf(corpus,scores,files_names):
         #Ajouter à la matrice le vecteur de scores pour chaque mot
         M.append(vector_num)
     return M
+
+
+#Fonction facultative
+# Changement de l'affichage pour associé chaque mot avec son vecteur de scores
+#Paramètres(corpus: chemin du répertoire "cleaned", dic_scores: dictionnaire des scores TF-IDF, files_name:liste des fichiers texte de "cleaned")
+#Résultat(M: Matrice dont la clé est le mot et la valeur, son vecteur de scores)
+
+def matrixWithWords(corpus, dic_scores, files_names):
+    M = {}
+    liste_of_words = unique_words(corpus)
+    # Pour chaque mot de la liste
+    for word in liste_of_words:
+        # Initialiser une liste vecteur numérique
+        vector_num = []
+        # Parcourir chaque fichier
+        for file in files_names:
+            # Si le mot est dans le dic des scores TF-IDF
+            if word in dic_scores[file]:
+                # Ajouter à son vecteur de scores le vecteur numérique
+                vector_num.append(dic_scores[file][word])
+            else:
+                # Sinon ajouter un score de 0
+                vector_num.append(0.0)
+        # Ajouter à la matrice le vecteur de scores pour chaque mot
+        M[word] = vector_num
+    return M
+
