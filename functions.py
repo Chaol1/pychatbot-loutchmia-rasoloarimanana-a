@@ -1,7 +1,5 @@
 """ My first chatbot - LOUTCHMIA Laïli & RASOLOARIMANANA Malalasoa
-Fonction qui "tokenise" les termes d'une question"""
-
-# Calcul du vecteur TF-IDF pour les termes de la question
+Fonction qui calcule le vecteur TF-IDF pour les termes de la question"""
 
 #Modification de la fonction tf de base, initialisation de toutes les valeurs à 0.0
 #Paramètre(text: Ici corpus, correspond au chemin du répertoire "cleaned".)
