@@ -1,29 +1,24 @@
 from functions import *
+from less_important import *
+
 if __name__ == '__main__':
-    '''
     directory = "./speeches"
     files_names = list_of_files(directory, "txt")
-    list_of_names=surname(files_names)
-    print(list_of_names)
-    list_of_full_names=first_name(list_of_names)
-    print(list_of_full_names)
-    without=without_dubble(list_of_full_names)
-    print(without)
-    #convert_all_texts(files_names) (à ne plus exécuter)"""
-    #convert_all_texts_2(files_names)
-    '''
+    list_of_names = surname(files_names)
+    list_of_full_names = first_name(list_of_names)
+    without = without_dubble(list_of_full_names)
 
-    dicTF=tf
-    dicIDF=idf
-    score_tf_idf=tf_idf(dicTF,dicIDF)
-    print(score_tf_idf)
+    #Méthode TF-IDF
+    corpus = "./cleaned"
+    dic_TF=calcul_tf(corpus)
+    nbdocparmot = nbDocperWord(corpus)
+    dic_IDF=calcul_idf_final()
+    dic_scores=tf_idf(dic_TF,dic_IDF)
+    unique = unique_words(corpus)
+    TF_IDF=matrix_TfIdf(corpus,dic_scores,files_names)
+    dic_TF_IDF=matrixWithWords(corpus, dic_scores, files_names)
+    
+    #Fonctionnalités à développer
 
-    unique=mots_uniques(corpus)
-    scores=score_tf_idf
-    files_names=list_of_files(corpus, "txt")
-    
-    TF_IDF=matrice_TfIdf(corpus,mots_uniques,scores,files_names)
-    print(TF_IDF)
-    
     moins_imp=less_important(TF_IDF,unique)
-    print(moins_imp)
+    print("Liste des mots moins importants :", moins_imp)
