@@ -1,4 +1,4 @@
-#main.py
+# main.py ou main_first.py
 
 """ My first chatbot - LOUTCHMIA Laïli & RASOLOARIMANANA Malalasoa
 Le fichier main_first.py permet de tester toutes les fonctions utilisées dans la partie 1 avec un affichage plus clair pour se retrouver,
@@ -31,8 +31,8 @@ if __name__ == '__main__':
     dic_TF=calcul_tf(corpus)
     print("Dic TF :",dic_TF)
 
-    nbdocparmot = nbDocperWord(corpus)
-    print("Dic du nombre de doc par mot :", nbdocparmot)
+    DocperWord = nbDocperWord(corpus)
+    print("Dic du nombre de doc par mot :", DocperWord)
 
     dic_IDF=calcul_idf_final()
     print("Dic IDF :", dic_IDF)
@@ -51,11 +51,11 @@ if __name__ == '__main__':
 
     #Fonctionnalités à développer
 
-    moins_imp=less_important(TF_IDF,unique)
-    print("Liste des mots moins importants :", moins_imp)
+    less_imp=less_important(TF_IDF,unique)
+    print("Liste des mots moins importants :", less_imp)
 
-    #score_max=score_eleve(TF_IDF,unique)
-    #print(score_max)
+    max_score=high_score(TF_IDF,unique)
+    print("Les mots au score TF-IDF le plus élevé :", max_score)
 
     chirac=words_Chirac(TF_IDF, unique)
     print("Chaîne des mots de Chirac :",chirac)
@@ -63,5 +63,5 @@ if __name__ == '__main__':
     nation=nation_analyse(dic_TF_IDF,list_of_names)
     print("Tuple présidents Nation et celui qui le dit le plus :",nation)
 
-    climat=climate_names(dic_TF_IDF,list_of_names)
-    print("Les présidents écologie/climat :", climat)
+    climate=climate_names(dic_TF_IDF,list_of_names)
+    print("Les présidents écologie/climat :", climate)
