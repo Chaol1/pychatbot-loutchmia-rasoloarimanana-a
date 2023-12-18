@@ -4,12 +4,11 @@ def tf_idf(dicTF,dicIDF):
     scores = {}
     #Parcourir le dictionnaire TF
     for file,dicOcc in dicTF.items():
-        #Initialiser un  dictionnaire vide comme valeur
         scores[file] = {}
         #Parcourir le dictionnaire valeur du dicTF
-        for mot,tf in dicOcc.items():
+        for word,tf in dicOcc.items():
             #Calcul du score TF-IDF pour chaque mot
-            scores[file][mot] = tf * dicIDF[mot]
+            scores[file][word] = tf * dicIDF[word]
     return scores
 
 # Liste des mots dédupliqués
