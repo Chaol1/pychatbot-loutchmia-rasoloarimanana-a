@@ -6,8 +6,7 @@ La première est de choisir un chiffre entre 1 et 5 : chaque chifrre correspond 
 La seconde lui permet de poser sa question et le chatBot luo répond en fonction des documents."""
 
 from functions import *
-from 
-from functions2 import *
+
 import time
 
 if __name__ == '__main__':
