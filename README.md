@@ -56,13 +56,13 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 35) answer_chatbot(question,sentence)
 
 ### Bugs rencontrés :
-- Pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
-- Pour *calcul_tf(directory)* : retourne un dictionnaire qui a pour clés tous les mots et pour valeurs, le nombre de fois où le mot apparaît dans l'ensemble du corpus et non dans chaque document
+- Pour *"convert_all_texts(files_names)"* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
+- Pour *"calcul_tf(directory)"* : retourne un dictionnaire qui a pour clés tous les mots et pour valeurs, le nombre de fois où le mot apparaît dans l'ensemble du corpus et non dans chaque document
 - Pour Github : à certains moments, nous n'arrivions plus à pull, push ou commit
-- Pour "convert_all_texts_2": Problème avec les caractères avec accents malgré une tentative de couvrir la plage de leurs codes ASCII, obligation de passer par une liste exhaustive pour chaque signe de ponctuation. La fonction de base est disponible sous forme de commentaire.
-- Pour "answer_chatbot" : Problème pour certaines questions données par l'utilisateur, une concaténation impossible entre "str" et "None" si la phrase est trop longue ou si elle contient des mots récurrents, il faut donc essayer avec des questions comme "Peux-tu me dire comment une nation peut-elle prendre soin du climat ?" ou "Comment une nation peut-elle prendre soin du climat ?" pouir que cela fonctionne.
+- Pour *"convert_all_texts_2(files_names)"*: Problème avec les caractères avec accents malgré une tentative de couvrir la plage de leurs codes ASCII, obligation de passer par une liste exhaustive pour chaque signe de ponctuation. La fonction de base est disponible sous forme de commentaire.
+- Pour *"answer_chatbot(question,sentence)"* : Problème pour certaines questions données par l'utilisateur, une concaténation impossible entre "str" et "None" si la phrase est trop longue ou si elle contient des mots récurrents, il faut donc essayer avec des questions comme "Peux-tu me dire comment une nation peut-elle prendre soin du climat ?" ou "Comment une nation peut-elle prendre soin du climat ?" pour que cela fonctionne.
 
-Nous avons majoritairement opté pour des matrices sous fomr de dictionnaire car cela permet de visualiser pour chaque document, chaque mot et sa valeur et le parcours avec les items nous convients mieux.
+Nous avons majoritairement opté pour des matrices sous forme de dictionnaire car cela permet de mieux visualiser pour chaque document, chaque mot et sa valeur et le parcours avec les items nous semble plus simple.
 
 ### Instruction d'exécution du code 
 
