@@ -1,22 +1,23 @@
+# common_words.py
+
 """ My first chatbot - LOUTCHMIA Laïli & RASOLOARIMANANA Malalasoa
-Fonction qui "tokenise" les termes d'une question"""
+Le fichier common_words.py permet d'afficher la liste des mots qui sont à la fois dans la question et dans le corpus"""
 
-#Fonction qui "tokenise" les termes d'une question, c'est-à-dire que chaque mot de la question est séparé dans une liste et perd sa majuscule s'il en a
-#Paramètre(question: question sous forme de chaîne de caractères)
-#Résultat(words: Liste des mots de la question tokenisés)
+from functions import * #De la branche token sur github
 
-def token(question):
-    words=[]
-    ch=""
-    for i in range(len(question)): #Parcours de la question en tant que chaîne de caractères
-        #Si le carcatère est dans l'intervalle des majuscules
-        if ord(question[i])>=65 and ord(question[i])<=90:
-            ch+=chr(ord(question[i])+32)
-        #Si le caractère est un signe de ponctuation
-        elif question[i]!="," and question[i]!="." and question[i]!=";" and question[i]!="?" and question[i]!="!" and question[i]!=";" and question[i]!='"'and question[i]!=':' and question[i]!=" " and question[i]!="-" and question[i]!="'":
-            ch+=question[i]
-        else:
-            if ch!="":
-                words.append(ch) #ajout du mot tokenisé dans la liste
-            ch=""
-    return words
+#Fonction 'common_words' qui permet d'afficher les mots communs
+#Paramètres(corpus : Le répertoire avec tous les fihciers (cleaned notamment), question : Question posée par l'utilisateur)
+#Résultat(common : Liste des mots communs)
+
+def common_words(corpus, question):
+    common=[]
+    #Utiliser la fonction des mots uniques
+    mots_corpus=mots_uniques(corpus)
+    #Utiliser la fonction token
+    mot=token(question)
+    #Parcourir chaque terme
+    for termes in mot:
+        for mots in mots_corpus:
+            if mots==termes and mots not in common:
+                common.append(mots)
+    return common
