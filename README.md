@@ -71,6 +71,7 @@ Nous avons majoritairement opté pour des matrices sous forme de dictionnaire ca
 - La fonction "convert_all_texts" est à exécuter qu'une fois afin d'éviter l'erreur liée à la création du fichier "cleaned".
 - Si vous voulez tester toutes les fonctions de la **première partie** sans forcément afficher le menu, exécutez le main.py.
 - Si vous voulez tester toutes les fonctions de la **seconde partie** sans forcément afficher le menu, exécutez le main_second.py.
+- Plusieurs fonctions ont besoin des fonctions précédentes, il est donc nécessaire de les définir avant, si elles appartiennent à d'autres branches.
 
 ### Accéder au menu
 Notre menu propose 2 options : 
