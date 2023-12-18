@@ -3,7 +3,7 @@
 """ My first chatbot - LOUTCHMIA Laïli & RASOLOARIMANANA Malalasoa
 Le fichier menu.py est notre fichier principal. Il propose à l'utilisateur un menu avec 2 options.
 La première est de choisir un chiffre entre 1 et 5 : chaque chifrre correspond à une fonctionnalité développée dans la partie 1.
-La seconde lui permet de poser sa question et le chatBot luo répond en fonction des documents."""
+La seconde lui permet de poser sa question et le chatBot lui répond en fonction des documents."""
 
 from functions import *
 
