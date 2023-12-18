@@ -4,7 +4,7 @@ Fonction retournant les mots ayant un score TF-IDF le plus élevé."""
 # Score TF-IDF le plus élevé
 #Paramètres(TF_IDF:Matrice TF-IDF, unique: Liste des mots sans doublons.)
 #(words:chaîne de caractères comportant tous les mots au score TF-IDF le plus élevé)
-def score_eleve(TF_IDF,unique):
+def high_score(TF_IDF,unique):
     words = " "
     #j parcourt les mots uniques
     j = 0
