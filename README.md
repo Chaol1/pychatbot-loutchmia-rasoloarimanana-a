@@ -32,9 +32,9 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 #### Fonctionnalités à développer
 15) less_important(TF_IDF,unique)
 16) score_eleve(TF_IDF,unique)
-17) mots_Chirac(TF_IDF, unique)
+17) words_Chirac(TF_IDF, unique)
 18) nation_analyse(dic_mat,liste_of_names)
-19) climat_analyse(dic_mat,list_of_names)
+19) climate_names(dic_mat,list_of_names)
 
 ### Bugs rencontrés :
 - pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
@@ -44,4 +44,9 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 
 ### Instruction d'exécution du code 
 
-La fonction "convert_all_texts" est à exécuter qu'une fois afin d'éviter l'erreur liée à la création du fichier "cleaned". Il faut également enlever les quotes autour des fonctions de base dans le main pour pouvoir les exécuter. Les quotes sont présentes uniquement pour le bon affichage du menu mais sont à enlever pour tester le programme.
+La fonction "convert_all_texts" est à exécuter qu'une fois afin d'éviter l'erreur liée à la création du fichier "cleaned". 
+
+### Accéder au menu
+Notre menu propose 2 options : 
+La première où l'utilisateur choisit un chiffre entre 1 et 5 pour lui afficher les réponses aux 5 fonctionnalités à développer.
+La deuxième qui lui permet de poser une question libre.
