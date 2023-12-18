@@ -27,14 +27,32 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 11) **tf_idf(dic_TF,dic_IDF)**
 12) **unique_words(corpus)**
 13) **matrix_TfIdf(corpus,dic_scores,files_names)**
-14) **matrixAvecMots(corpus, dic_scores, files_names)**
+14) **matrixWithWords(corpus, dic_scores, files_names)**
 
 #### Fonctionnalités à développer
 15) less_important(TF_IDF,unique)
 16) high_score(TF_IDF,unique)
 17) words_Chirac(TF_IDF, unique)
-18) nation_analyse(dic_mat,liste_of_names)
+18) nation_analyse(dic_mat,list_of_names)
 19) climate_names(dic_mat,list_of_names)
+
+#### Vectorisation de question
+20) token(question)
+21)
+22) tf_chain_bis(text)
+23) calcul_tf_bis(corpus)
+24) quest_final(question, corpus)
+25) quest_tf_idf(question, corpus)
+
+#### Calcul de la similarité
+27) scalar_product(vectA,vectB)
+28) norm_vector(vect)
+29) general_similarity(scalar_product, normA, normB)
+30) calcul_similarity(dic_scores, vect_quest)
+
+#### Génération de réponse automatique
+32) doc_plus_pert(question, corpus)
+33) def answer_chatbot(question,sentence)
 
 ### Bugs rencontrés :
 - pour *convert_all_texts(files_names)* : à chaque exécution, ne peut pas recréer le répertoire "cleaned".
