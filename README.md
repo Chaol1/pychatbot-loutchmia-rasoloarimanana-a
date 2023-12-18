@@ -1,5 +1,4 @@
 # Projet Python L1 : My first Chatbot
-Première Partie
 
 ### Lien du dépôt GIT
 
@@ -11,23 +10,23 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
  
 ### Liste des programmes 
 #### Fonctions de base
-1) **list_of_files(directory, extension)**
-2) **surname(files_names)**
-3) **first_name(list_of_names)**
-4) **without_dubble(list_of_full_names)**
-5) **convert_all_texts(files_names)**
-6) **convert_all_texts_2(files_names)**
+1) list_of_files(directory, extension)
+2) surname(files_names)
+3) first_name(list_of_names)
+4) without_dubble(list_of_full_names)
+5) convert_all_texts(files_names)
+6) convert_all_texts_2(files_names)
 
 #### Méthode TF-IDF
 
-7) **tf_chain(texte)**
-8) **calcul_tf(corpus)**
-9) **nbDocperWord(directory)**
-10) **calcul_idf_final()**
-11) **tf_idf(dic_TF,dic_IDF)**
-12) **unique_words(corpus)**
-13) **matrix_TfIdf(corpus,dic_scores,files_names)**
-14) **matrixWithWords(corpus, dic_scores, files_names)**
+7) tf_chain(texte)
+8) calcul_tf(corpus)
+9) nbDocperWord(directory)
+10) calcul_idf_final()
+11) tf_idf(dic_TF,dic_IDF)
+12) unique_words(corpus)
+13) matrix_TfIdf(corpus,dic_scores,files_names)
+14) matrixWithWords(corpus, dic_scores, files_names)
 
 #### Fonctionnalités à développer
 15) less_important(TF_IDF,unique)
@@ -62,6 +61,8 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 - Pour Github : à certains moments, nous n'arrivions plus à pull, push ou commit
 - Pour "convert_all_texts_2": Problème avec les caractères avec accents malgré une tentative de couvrir la plage de leurs codes ASCII, obligation de passer par une liste exhaustive pour chaque signe de ponctuation. La fonction de base est disponible sous forme de commentaire.
 - Pour "answer_chatbot" : Problème pour certaines questions données par l'utilisateur, une concaténation impossible entre "str" et "None" si la phrase est trop longue ou si elle contient des mots récurrents, il faut donc essayer avec des questions comme "Peux-tu me dire comment une nation peut-elle prendre soin du climat ?" ou "Comment une nation peut-elle prendre soin du climat ?" pouir que cela fonctionne.
+
+Nous avons majoritairement opté pour des matrices sous fomr de dictionnaire car cela permet de visualiser pour chaque document, chaque mot et sa valeur et le parcours avec les items nous convients mieux.
 
 ### Instruction d'exécution du code 
 
