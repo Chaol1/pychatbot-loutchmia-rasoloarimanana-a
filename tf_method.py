@@ -4,7 +4,7 @@
 Le fichier tf_method.py permet de calculer la fréquence de chaque mot dans chaque document (le score TF)"""
 
 
-from basic_functions import *
+from functions import * #De la branche main.py
 
 
 #La fonction 'tf_chaine' est générale, elle prend en paramètre une chaîne de caractères et permet de calculer le score TF de chaque mot."
