@@ -18,8 +18,8 @@ if __name__ == '__main__':
     score_tf_idf=tf_idf(dicTF,dicIDF)
     print(score_tf_idf)
 
-    unique=mots_uniques(corpus)
+    unique=unique_words(corpus)
     scores=score_tf_idf
     files_names=list_of_files(corpus, "txt")
-    TF_IDF=matrice_TfIdf(corpus,mots_uniques,scores,files_names)
+    TF_IDF=matrice_TfIdf(corpus,unique_words,scores,files_names)
     print(TF_IDF)
