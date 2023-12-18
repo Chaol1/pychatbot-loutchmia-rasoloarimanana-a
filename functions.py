@@ -2,7 +2,7 @@
 Fonction qui retourne la liste des présidents mentionnant le terme "nation" et celui qui le nomme le plus."""
 
 # Liste des présidents ayant parlé de la "nation" et celui qui en a le plus parlé
-#Paramètres(dic_mat:Matrice TF-IDF dont les clés sont les mots et les valeurs, leur score TF-IDF, list_of_names: Liste des fichiers texte dans "cleaned")
+#Paramètres(dic_mat:Matrice TF-IDF dont les clés sont les mots et les valeurs, leur score TF-IDF, list_of_names: Liste des noms des présidents)
 #Résultat(noms: chaîne de caractères contenant les noms des présidents parlant de "nation" plus: nom du président qui la mentionne le plus.)
 
 def nation_analyse(dic_mat,list_of_names):
