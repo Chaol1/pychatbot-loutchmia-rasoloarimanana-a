@@ -68,7 +68,9 @@ Nous avons majoritairement opté pour des matrices sous forme de dictionnaire ca
 
 ### Instruction d'exécution du code 
 
-La fonction "convert_all_texts" est à exécuter qu'une fois afin d'éviter l'erreur liée à la création du fichier "cleaned". 
+La fonction "convert_all_texts" est à exécuter qu'une fois afin d'éviter l'erreur liée à la création du fichier "cleaned".
+Si vous voulez tester toutes les fonctions de la **première partie** sans forcément afficher le menu, exécutez le main.py.
+Si vous voulez tester toutes les fonctions de la **seconde partie** sans forcément afficher le menu, exécutez le main_second.py.
 
 ### Accéder au menu
 Notre menu propose 2 options : 
