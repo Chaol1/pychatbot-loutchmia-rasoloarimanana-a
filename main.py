@@ -9,4 +9,6 @@ if __name__ == '__main__':
     without=without_dubble(list_of_full_names)
     corpus = "./cleaned"
     dic_TF=calcul_tf(corpus)
-    print("Dic TF :",dic_TF)
+    nbdocparmot = nbDocperWord(corpus)
+    dic_IDF=calcul_idf_final()
+    print("Dic IDF :", dic_IDF)
