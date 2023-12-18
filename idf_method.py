@@ -4,7 +4,7 @@
 Le fichier idf_method.py permet de calculer la fréquence inverse du document pour chaque mot dans chaque document (le score IDF)"""
 
 from functions import *   #De la branche main sur github
-from idf_method import *  #De la branche tf sur github
+from tf_method import *  #De la branche tf sur github
 import math
 
 
