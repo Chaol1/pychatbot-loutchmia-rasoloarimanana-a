@@ -1,5 +1,6 @@
 from functions import *
-import time
+from idf_method import *
+
 if __name__ == '__main__':
     '''
     directory = "./speeches"
@@ -14,5 +15,5 @@ if __name__ == '__main__':
     #convert_all_texts_2(files_names)'''
     
     directory = "./cleaned"
-    idf=calcul_idf_final()
-    print(idf)
+    dic_IDF=calcul_idf_final()
+    print("Dic IDF :", dic_IDF)
