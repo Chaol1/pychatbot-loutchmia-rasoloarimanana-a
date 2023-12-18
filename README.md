@@ -1,15 +1,15 @@
 # Projet Python L1 : My first Chatbot
 
+### Membres du projet
+- LOUTCHMIA Laïli - Groupe A
+- RASOLOARIMANANA Malalasoa - Groupe A
+ 
 ### Lien du dépôt GIT
 https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 
 ### Rapport du projet en pdf : 
 Rapport_pychatbot-rasoloarimanana-loutchmia-a.pdf (dans le document .zip)
 
-### Membres du projet
-- LOUTCHMIA Laïli - Groupe A
-- RASOLOARIMANANA Malalasoa - Groupe A
- 
 ### Liste des programmes 
 #### Fonctions de base
 1) list_of_files(directory, extension)
