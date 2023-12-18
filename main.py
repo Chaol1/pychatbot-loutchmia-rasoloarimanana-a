@@ -8,5 +8,5 @@ if __name__ == '__main__':
     dic_scores = tf_idf(dic_TF, dic_IDF)
     TF_IDF = matrix_TfIdf(corpus, dic_scores, files_names)
     unique = unique_words(corpus)
-    score_max=score_eleve(TF_IDF,unique)
+    score_max=high_score(TF_IDF,unique)
     print(score_max)
