@@ -11,9 +11,9 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 Rapport_pychatbot-rasoloarimanana-loutchmia-a.pdf (dans le document .zip)
 
 ### Accéder au menu
-! Pour pouvoir tester l'ensemble des fonctions et le chatbot, il est important de n'éxecuter **que les deux fonctions suivantes** que nous avons créer :
+!!! Pour pouvoir tester l'ensemble des fonctions et le chatbot, il est important de n'éxecuter **que les deux fonctions suivantes** que nous avons créer :
 - *chatbot_officiel_loutchmia_rasoloarimanana.py*
-- *menu_all* !
+- *menu_all* 
 
  Le menu propose 2 options.
  
