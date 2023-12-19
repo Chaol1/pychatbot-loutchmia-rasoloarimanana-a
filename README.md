@@ -10,6 +10,18 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 ### Rapport du projet en pdf : 
 Rapport_pychatbot-rasoloarimanana-loutchmia-a.pdf (dans le document .zip)
 
+### Accéder au menu
+! Pour pouvoir tester l'ensemble des fonctions et le chatbot, il est important de n'éxecuter **que les deux fonctions suivantes** que nous avons créer :
+- *chatbot_officiel_loutchmia_rasoloarimanana.py*
+- *menu_all* !
+
+ Le menu propose 2 options.
+ 
+La première où l'utilisateur choisit un chiffre entre 1 et 5 pour lui afficher les réponses aux 5 fonctionnalités à développer.
+La deuxième qui lui permet de poser une question libre.
+Lorsqu'on demande "Votre choix : ", soit vous mettez un chiffre, soit vous écrivez votre question commençant par une **majuscule** et par ces mots : *"Comment","Pourquoi","Peux-tu","Quel","Quels" ou "Quand"*. 
+
+Vous aurez ainsi une réponse complète basée sur les documents.
 ### Liste des programmes 
 #### Fonctions de base
 1) list_of_files(directory, extension)
@@ -73,10 +85,4 @@ Nous avons majoritairement opté pour des matrices sous forme de dictionnaire ca
 - Si vous voulez tester toutes les fonctions de la **seconde partie** sans forcément afficher le menu, exécutez le main_second.py.
 - Plusieurs fonctions ont besoin des fonctions précédentes, il est donc nécessaire de les définir avant, si elles appartiennent à d'autres branches.
 
-### Accéder au menu
-Notre menu propose 2 options : 
-La première où l'utilisateur choisit un chiffre entre 1 et 5 pour lui afficher les réponses aux 5 fonctionnalités à développer.
-La deuxième qui lui permet de poser une question libre.
-Lorsqu'on demande "Votre choix : ", soit vous mettez un chiffre, soit vous écrivez votre question commençant par une **majuscule** et par ces mots : *"Comment","Pourquoi","Peux-tu","Quel","Quels" ou "Quand"*. 
 
-Vous aurez ainsi une réponse complète basée sur les documents.
