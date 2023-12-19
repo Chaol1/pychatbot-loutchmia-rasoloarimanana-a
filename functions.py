@@ -12,12 +12,12 @@ from functions import * #De la branche token sur github
 def common_words(corpus, question):
     common=[]
     #Utiliser la fonction des mots uniques
-    mots_corpus=mots_uniques(corpus)
+    words_corpus=unique_words(corpus)
     #Utiliser la fonction token
-    mot=token(question)
+    word=token(question)
     #Parcourir chaque terme
-    for termes in mot:
-        for mots in mots_corpus:
-            if mots==termes and mots not in common:
+    for terms in word:
+        for words in words_corpus:
+            if words==terms and words not in common:
                 common.append(mots)
     return common
