@@ -11,7 +11,7 @@ https://github.com/Chaol1/pychatbot-loutchmia-rasoloarimanana-a.git
 Rapport_pychatbot-rasoloarimanana-loutchmia-a.pdf (dans le document .zip)
 
 ### Accéder au menu
-!!! Pour pouvoir tester l'ensemble des fonctions et le chatbot, il est important de n'éxecuter **que les deux fonctions suivantes** que nous avons créer :
+!!! Pour pouvoir tester l'ensemble des fonctions dans un seul fichier et le chatbot, il est important de n'éxecuter **que les deux fonctions suivantes** que nous avons créer :
 - *chatbot_officiel_loutchmia_rasoloarimanana.py*
 - *menu_all.py* 
 
@@ -83,6 +83,5 @@ Nous avons majoritairement opté pour des matrices sous forme de dictionnaire ca
 - La fonction "convert_all_texts" est à exécuter qu'une fois afin d'éviter l'erreur liée à la création du fichier "cleaned".
 - Si vous voulez tester toutes les fonctions de la **première partie** sans forcément afficher le menu, exécutez le main.py.
 - Si vous voulez tester toutes les fonctions de la **seconde partie** sans forcément afficher le menu, exécutez le main_second.py.
-- Plusieurs fonctions ont besoin des fonctions précédentes, il est donc nécessaire de les définir avant, si elles appartiennent à d'autres branches.
-
+- Si vous voulez exécuter les fonctions séparément et non sur *chatbot_officiel_loutchmia_rasoloarimanana.py* et *menu_all.py*, nous les avons mises une à une dans le fichier .zip mais certaines ne sont pas encore liées.
 
